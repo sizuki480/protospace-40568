@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
       #保存されない場合、値を保持して詳細ページrender
       @prototype = @comment.prototype
       @comments = @prototype.comments
-      render "prototypes/show"
+
+      render "prototypes/show", status: :unprocessable_entity
     end
     
   end
